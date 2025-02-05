@@ -18,13 +18,14 @@
     "minimatch": "^3.0.3",
     "selector-kit": "^0.1",
     "stable": "^0.1.5",
-    "underscore-plus": "^1.6.6"
+    "underscore-plus": "^1.6.6",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "atom-jasmine3-test-runner": "^5.1.8",
     "coffeelint": "^1.9.7",
     "fs-plus": ">=2.4.0",
-    "standard": "^8.3.0",
+    "standard": "^11.0.0",
     "temp": ">=0.7.0"
   },
   "providedServices": {
@@ -256,5 +257,10 @@
       "**/spec/fixtures/**"
     ]
   },
-  "atomTestRunner": "./spec/custom-runner"
+  "atomTestRunner": "./spec/custom-runner",
+  "scripts": {
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
